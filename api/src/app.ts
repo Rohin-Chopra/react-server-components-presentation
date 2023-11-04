@@ -1,8 +1,8 @@
 import cors from "cors";
 import express from "express";
 import { averageHandler } from "./routes/average";
-import { dailyForecastHandler } from "./routes/dailyForecast";
 import { feelsLikeHandler } from "./routes/feelsLike";
+import { dailyForecastHandler } from "./routes/forecast/daily";
 import { humidityHandler } from "./routes/humidity";
 import { precipitationHandler } from "./routes/precipitation/precipitation";
 import { uVIndexHandler } from "./routes/uVIndex";
@@ -15,8 +15,8 @@ const app = express();
 app.use(cors());
 
 app.use(async (req, res, next) => {
-  await delay(3000);
-  next();
+  await delay(0);
+  return next();
 });
 
 app.get("/", (req, res, next) => {
@@ -29,7 +29,7 @@ app.get("/weather", weatherHandler);
 
 app.get("/average", averageHandler);
 
-app.get("/daily-forecast", dailyForecastHandler);
+app.get("/forecast/daily", dailyForecastHandler);
 
 app.get("/feels-like", feelsLikeHandler);
 
