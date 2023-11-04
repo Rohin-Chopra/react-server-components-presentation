@@ -18,20 +18,22 @@ export const WeatherDetailsBox = ({
   children,
 }: Props) => {
   return (
-    <div className="px-4 py-3 rounded-lg bg-night max-w-[10rem] h-[9.5rem] mb-2 mr-2">
-      <header className="text-xs flex items-center text-nightText">
-        <Icon className="mr-2" />
-        <span>{title}</span>
-      </header>
-      <div className="text-2xl mt-2 mb-8">
-        {metric}
-        {metricText && (
-          <>
-            <br />
-            <p className="text-sm font-medium">{metricText}</p>
-          </>
-        )}
-        {children}
+    <div className="px-4 py-3 rounded-lg bg-night max-w-[10rem] h-[9.5rem] mb-2 mr-2 flex flex-col justify-between">
+      <div>
+        <header className="text-xs flex items-center text-nightText">
+          <Icon className="mr-2" />
+          <span>{title}</span>
+        </header>
+        <div className="text-2xl mt-2">
+          {metric}
+          {metricText && (
+            <>
+              <br />
+              <p className="text-xs font-medium">{metricText}</p>
+            </>
+          )}
+          {children}
+        </div>
       </div>
       <div className="text-xs">{description}</div>
     </div>
