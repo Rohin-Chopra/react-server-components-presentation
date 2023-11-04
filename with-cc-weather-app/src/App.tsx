@@ -1,7 +1,12 @@
+import { WeatherPage } from "./pages/WeatherPage";
+import { AppProvider } from "./providers/AppProvider";
+
 function App() {
   return (
     <>
-      <div>hey</div>
+      <AppProvider>
+        <WeatherPage />
+      </AppProvider>
     </>
   );
 }

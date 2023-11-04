@@ -5,6 +5,8 @@ export default {
     extend: {
       colors: {
         light: "#ebebeb",
+        night: "rgba(50,49,78,0.8)",
+        nightText: "#9ea1c8",
       },
     },
   },

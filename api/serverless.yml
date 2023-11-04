@@ -1,0 +1,23 @@
+org: rohinchops
+app: rsc-demo-api
+service: api
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-southeast-2
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 5000
+
+functions:
+  api:
+    handler: "./src/handler.handler"
+    events:
+      - httpApi: "*"
