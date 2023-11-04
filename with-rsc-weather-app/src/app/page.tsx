@@ -6,7 +6,7 @@ import { Precipitation } from "@/components/Precipitation";
 import { HourlyForecast } from "@/components/TenDaysForecast";
 import { UVIndex } from "@/components/UVIndex";
 import { Visibility } from "@/components/Visibility";
-import { getWeather } from "./api/getWeather";
+import { getWeather } from "./lib/getWeather";
 
 export default async function Home() {
   const weather = await getWeather();

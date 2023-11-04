@@ -1,7 +1,7 @@
 import { FaSun } from "react-icons/fa";
 
 import { WeatherDetailsBox } from "../WeatherDetailsBox";
-import { getAverage } from "./api/getWeather";
+import { getAverage } from "./lib/getWeather";
 
 export async function Average() {
   const averageMetric = await getAverage();

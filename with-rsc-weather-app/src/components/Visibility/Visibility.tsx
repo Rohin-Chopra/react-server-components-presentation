@@ -1,6 +1,6 @@
 import { FaSun } from "react-icons/fa";
 import { WeatherDetailsBox } from "../WeatherDetailsBox";
-import { getVisibility } from "./api/getVisibility";
+import { getVisibility } from "./lib/getVisibility";
 
 export async function Visibility() {
   const visibilityMetric = await getVisibility();

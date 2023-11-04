@@ -1,6 +1,6 @@
 import { FaSun } from "react-icons/fa";
 import { WeatherDetailsBox } from "../WeatherDetailsBox";
-import { getUVIndex } from "./api/getUVIndex";
+import { getUVIndex } from "./lib/getUVIndex";
 
 export const UVIndex = async () => {
   const uVIndexMetric = await getUVIndex();

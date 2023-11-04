@@ -1,6 +1,6 @@
 import { FaSun } from "react-icons/fa";
 import { WeatherDetailsBox } from "../WeatherDetailsBox";
-import { getHumidity } from "./api/getHumidity";
+import { getHumidity } from "./lib/getHumidity";
 
 export async function Humidity() {
   const humidityMetric = await getHumidity();
