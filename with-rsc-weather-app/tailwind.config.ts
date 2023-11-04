@@ -21,6 +21,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindScrollbar, { nocompatible: true }],
+  plugins: [tailwindScrollbar, { nocompatible: true } as any],
 };
 export default config;
