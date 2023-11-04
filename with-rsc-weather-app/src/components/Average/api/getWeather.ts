@@ -1,6 +1,6 @@
 import { Metric } from "../../../types/types";
 
 export async function getAverage(): Promise<Metric> {
-  const response = await fetch("http://localhost:5000/average");
+  const response = await fetch(`${process.env.API_URL}/average`);
   return await response.json();
 }
