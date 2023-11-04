@@ -18,7 +18,7 @@ export default async function Home() {
         backgroundImage: "url('jackson-hendry-eodA_8CTOFo-unsplash.jpg')",
       }}
     >
-      <div className="flex container justify-center py-8">
+      <div className="flex w-full h-full justify-center py-8">
         <div>
           <div className="text-center mb-4">
             <h1 className="text-2xl font-medium">{weather?.location}</h1>
