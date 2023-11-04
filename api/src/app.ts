@@ -3,6 +3,7 @@ import express from "express";
 import { averageHandler } from "./routes/average";
 import { feelsLikeHandler } from "./routes/feelsLike";
 import { dailyForecastHandler } from "./routes/forecast/daily";
+import { hourlyForecastHandler } from "./routes/forecast/hourly";
 import { humidityHandler } from "./routes/humidity";
 import { precipitationHandler } from "./routes/precipitation/precipitation";
 import { uVIndexHandler } from "./routes/uVIndex";
@@ -15,6 +16,7 @@ const app = express();
 app.use(cors());
 
 app.use(async (req, res, next) => {
+  await delay(3000);
   await delay(0);
   return next();
 });
@@ -28,6 +30,8 @@ app.get("/", (req, res, next) => {
 app.get("/weather", weatherHandler);
 
 app.get("/average", averageHandler);
+
+app.get("/forecast/hourly", hourlyForecastHandler);
 
 app.get("/forecast/daily", dailyForecastHandler);
 
