@@ -16,8 +16,8 @@ export const DailyForecast = () => {
       <hr className="mt-3 mb-2 border-t-nightText" />
       <div className="space-y-2">
         {numbersArray.map((number) => (
-          <>
-            <div key={number} className="flex items-center py-1">
+          <div key={number}>
+            <div className="flex items-center py-1">
               <p className="w-16">Today</p>
               <div className="w-10">
                 <FaCloud />
@@ -28,7 +28,7 @@ export const DailyForecast = () => {
               </div>
             </div>
             <hr className="my-2 border-t-nightText" />
-          </>
+          </div>
         ))}
       </div>
     </div>
