@@ -28,7 +28,7 @@ export const DailyForecast = () => {
           {dailyForecast.map((forecast, index) => (
             <div key={index}>
               <div className="flex items-center py-1">
-                <p className="w-16">Today</p>
+                <p className="w-16">{index === 0 ? "Today" : forecast.day}</p>
                 <div className="w-10">
                   <WeatherIcon
                     className="text-2xl"

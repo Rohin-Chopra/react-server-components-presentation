@@ -23,3 +23,11 @@ export type Weather = {
   lowestTemperature: string;
   highestTemperature: string;
 };
+
+export type DailyWeather = Weather & {
+  day: string;
+};
+
+export type HourlyWeather = Weather & {
+  time: string;
+};

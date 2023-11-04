@@ -1,9 +1,13 @@
 import { Request, Response } from "express";
-import { Weather } from "../../../types/types";
+import { DailyWeather } from "../../../types/types";
 
-export function dailyForecastHandler(req: Request, res: Response<Weather[]>) {
+export function dailyForecastHandler(
+  req: Request,
+  res: Response<DailyWeather[]>
+) {
   return res.status(200).json([
     {
+      day: "Saturday",
       condition: "Sunny",
       location: "Melbourne",
       lowestTemperature: "8°",
@@ -12,6 +16,7 @@ export function dailyForecastHandler(req: Request, res: Response<Weather[]>) {
       temperatureDescription: "partly cloudy",
     },
     {
+      day: "Sunday",
       condition: "Sunny",
       location: "Melbourne",
       lowestTemperature: "7°",
@@ -20,6 +25,7 @@ export function dailyForecastHandler(req: Request, res: Response<Weather[]>) {
       temperatureDescription: "partly cloudy",
     },
     {
+      day: "Monday",
       condition: "Cloudy and Sunny",
       location: "Melbourne",
       lowestTemperature: "11°",
@@ -28,6 +34,7 @@ export function dailyForecastHandler(req: Request, res: Response<Weather[]>) {
       temperatureDescription: "partly cloudy",
     },
     {
+      day: "Tuesday",
       condition: "Sunny",
       location: "Melbourne",
       lowestTemperature: "15°",
@@ -36,6 +43,7 @@ export function dailyForecastHandler(req: Request, res: Response<Weather[]>) {
       temperatureDescription: "partly cloudy",
     },
     {
+      day: "Wednesday",
       condition: "Cloudy",
       location: "Melbourne",
       lowestTemperature: "15°",
@@ -44,6 +52,7 @@ export function dailyForecastHandler(req: Request, res: Response<Weather[]>) {
       temperatureDescription: "partly cloudy",
     },
     {
+      day: "Thursday",
       condition: "Cloudy and Sunny",
       location: "Melbourne",
       lowestTemperature: "13°",
@@ -52,6 +61,7 @@ export function dailyForecastHandler(req: Request, res: Response<Weather[]>) {
       temperatureDescription: "partly cloudy",
     },
     {
+      day: "Friday",
       condition: "Sunny",
       location: "Melbourne",
       lowestTemperature: "12°",
@@ -60,6 +70,7 @@ export function dailyForecastHandler(req: Request, res: Response<Weather[]>) {
       temperatureDescription: "partly cloudy",
     },
     {
+      day: "Saturday",
       condition: "Cloudy",
       location: "Melbourne",
       lowestTemperature: "12°",
@@ -68,6 +79,7 @@ export function dailyForecastHandler(req: Request, res: Response<Weather[]>) {
       temperatureDescription: "partly cloudy",
     },
     {
+      day: "Sunday",
       condition: "Sunny",
       location: "Melbourne",
       lowestTemperature: "9°",
@@ -76,6 +88,7 @@ export function dailyForecastHandler(req: Request, res: Response<Weather[]>) {
       temperatureDescription: "partly cloudy",
     },
     {
+      day: "Monday",
       condition: "Cloudy and Sunny",
       location: "Melbourne",
       lowestTemperature: "7°",
