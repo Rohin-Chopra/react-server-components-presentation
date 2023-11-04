@@ -1,7 +1,8 @@
 import { FaSpinner, FaSun } from "react-icons/fa";
 import { useQuery } from "react-query";
-import { WeatherDetailsBox } from "../WeatherDetailsBox";
-import { getHumidity } from "./api/getHumidity";
+
+import { getHumidity } from "@/components/Humidity/api/getHumidity";
+import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
 export function Humidity() {
   const { data: humidityMetric, isLoading } = useQuery("humidity", getHumidity);

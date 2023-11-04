@@ -1,7 +1,8 @@
 import { FaSpinner, FaSun } from "react-icons/fa";
 import { useQuery } from "react-query";
-import { WeatherDetailsBox } from "../WeatherDetailsBox";
-import { getFeelsLike } from "./api/getFeelsLike";
+
+import { getFeelsLike } from "@/components/FeelsLike/api/getFeelsLike";
+import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
 export function FeelsLike() {
   const { data: feelsLikeMetric, isLoading } = useQuery(

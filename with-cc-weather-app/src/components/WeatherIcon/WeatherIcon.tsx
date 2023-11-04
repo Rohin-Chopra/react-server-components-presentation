@@ -1,3 +1,4 @@
+import { WeatherCondition } from "@/types/types";
 import { IconType } from "react-icons";
 import { FaSun } from "react-icons/fa";
 import {
@@ -10,7 +11,6 @@ import {
   WiSnow,
   WiThunderstorm,
 } from "react-icons/wi";
-import { WeatherCondition } from "../../types/types";
 
 type Props = {
   className?: string;

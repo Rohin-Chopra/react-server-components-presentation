@@ -1,7 +1,8 @@
 import { FaSpinner, FaSun } from "react-icons/fa";
 import { useQuery } from "react-query";
-import { WeatherDetailsBox } from "../WeatherDetailsBox";
-import { getVisibility } from "./api/getVisibility";
+
+import { getVisibility } from "@/components/Visibility/api/getVisibility";
+import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
 export function Visibility() {
   const { data: visibilityMetric, isLoading } = useQuery(

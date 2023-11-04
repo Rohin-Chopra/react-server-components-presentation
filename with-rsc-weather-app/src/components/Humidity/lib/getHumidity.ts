@@ -1,4 +1,4 @@
-import { Metric } from "../../../types/types";
+import { Metric } from "@/types/types";
 
 export async function getHumidity(): Promise<Metric> {
   const response = await fetch(

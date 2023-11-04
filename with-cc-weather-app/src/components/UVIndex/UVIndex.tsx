@@ -1,7 +1,8 @@
 import { FaSpinner, FaSun } from "react-icons/fa";
 import { useQuery } from "react-query";
-import { WeatherDetailsBox } from "../WeatherDetailsBox";
-import { getUVIndex } from "./api/getUVIndex";
+
+import { getUVIndex } from "@/components/UVIndex/api/getUVIndex";
+import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
 export const UVIndex = () => {
   const { data: uVIndexMetric, isLoading } = useQuery("uv-index", getUVIndex);

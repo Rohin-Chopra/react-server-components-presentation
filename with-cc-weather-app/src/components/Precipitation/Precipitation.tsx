@@ -1,7 +1,8 @@
 import { FaSpinner, FaSun } from "react-icons/fa";
 import { useQuery } from "react-query";
-import { WeatherDetailsBox } from "../WeatherDetailsBox";
-import { getPrecipitation } from "./api/getPrecipitation";
+
+import { getPrecipitation } from "@/components/Precipitation/api/getPrecipitation";
+import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
 export function Precipitation() {
   const { data: precipitationMetric, isLoading } = useQuery(

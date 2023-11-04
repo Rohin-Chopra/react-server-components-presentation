@@ -1,14 +1,14 @@
+import { Average } from "@/components/Average";
+import { DailyForecast } from "@/components/DailyForecast";
+import { FeelsLike } from "@/components/FeelsLike";
+import { HourlyForecast } from "@/components/HourlyForecast";
+import { Humidity } from "@/components/Humidity";
+import { Precipitation } from "@/components/Precipitation";
+import { UVIndex } from "@/components/UVIndex";
+import { Visibility } from "@/components/Visibility";
+import { getWeather } from "@/pages/WeatherPage/api/getWeather";
 import { FaSpinner } from "react-icons/fa";
 import { useQuery } from "react-query";
-import { Average } from "../../components/Average";
-import { DailyForecast } from "../../components/DailyForecast";
-import { FeelsLike } from "../../components/FeelsLike";
-import { HourlyForecast } from "../../components/HourlyForecast";
-import { Humidity } from "../../components/Humidity";
-import { Precipitation } from "../../components/Precipitation";
-import { UVIndex } from "../../components/UVIndex";
-import { Visibility } from "../../components/Visibility";
-import { getWeather } from "./api/getWeather";
 
 export const WeatherPage = () => {
   const { data: weather, isLoading } = useQuery("weather", getWeather);

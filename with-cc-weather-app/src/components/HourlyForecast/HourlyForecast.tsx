@@ -1,7 +1,8 @@
 import { FaSpinner } from "react-icons/fa";
 import { useQuery } from "react-query";
-import { WeatherIcon } from "../WeatherIcon";
-import { getHourlyForecast } from "./api/getHourlyForecast";
+
+import { getHourlyForecast } from "@/components/HourlyForecast/api/getHourlyForecast";
+import { WeatherIcon } from "@/components/WeatherIcon";
 
 export const HourlyForecast = () => {
   const { data: hourlyForecast, isLoading } = useQuery(
