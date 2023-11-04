@@ -7,7 +7,7 @@ export const DailyForecast = async () => {
 
   return (
     dailyForecast && (
-      <div className="px-4 py-3 rounded-lg bg-night w-[16rem]">
+      <div className="px-4 py-3 rounded-lg bg-night w-[18rem]">
         <div className="text-xs flex items-center text-nightText">
           <FaCalendar className="mr-2" /> DAILY FORECAST
         </div>
@@ -16,7 +16,7 @@ export const DailyForecast = async () => {
           {dailyForecast.map((forecast, index) => (
             <div key={index}>
               <div className="flex items-center py-1">
-                <p className="w-16">{index === 0 ? "Today" : forecast.day}</p>
+                <p className="w-24">{index === 0 ? "Today" : forecast.day}</p>
                 <div className="w-10">
                   <WeatherIcon
                     className="text-2xl"
