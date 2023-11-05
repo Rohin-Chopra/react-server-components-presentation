@@ -1,8 +1,9 @@
-import { FaCalendar, FaSpinner } from "react-icons/fa";
+import { FaCalendar } from "react-icons/fa";
 import { useQuery } from "react-query";
 
 import { getDailyWeather } from "@/components/DailyWeather/api/getDailyWeather";
 import { WeatherIcon } from "@/components/WeatherIcon";
+import { LoadingWetherDetailsBox } from "../LoadingWetherDetailsBox";
 
 export const DailyWeather = () => {
   const { data: dailyWeather, isLoading } = useQuery(
@@ -11,11 +12,7 @@ export const DailyWeather = () => {
   );
 
   if (isLoading) {
-    return (
-      <div className="px-4 py-3 rounded-lg bg-night w-[10rem] h-[9.5rem] mb-2 mr-2 flex items-center justify-center">
-        <FaSpinner className="animate-spin text-2xl" />
-      </div>
-    );
+    return <LoadingWetherDetailsBox />;
   }
 
   return (
