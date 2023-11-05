@@ -21,9 +21,11 @@ app.use(async (req, res, next) => {
   return next();
 });
 
+// todo: add api key
+
 app.get("/", (req, res, next) => {
   return res.status(200).json({
-    message: "Hello frssom root!",
+    message: "Welcome to the Weather API!",
   });
 });
 
