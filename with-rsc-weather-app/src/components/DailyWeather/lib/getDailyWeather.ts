@@ -1,10 +1,10 @@
 import { DailyWeather } from "@/types/types";
 
-export async function getDailyForecast(): Promise<DailyWeather[]> {
+export async function getDailyWeather(): Promise<DailyWeather[]> {
   const location = "melbourne";
 
   const response = await fetch(
-    `${process.env.API_URL}/forecast/daily?location=${location}`
+    `${process.env.API_URL}/weather/daily?location=${location}`
   );
   return await response.json();
 }

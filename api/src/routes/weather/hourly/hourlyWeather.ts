@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { locationsWeather } from "../../../data";
-import { DailyWeather, ErrorResponse } from "../../../types/types";
+import { ErrorResponse, HourlyWeather } from "../../../types/types";
 
-export function dailyForecastHandler(
+export function hourlyWeatherHandler(
   req: Request<any, any, any, { location?: string }>,
-  res: Response<DailyWeather[] | ErrorResponse>
+  res: Response<HourlyWeather[] | ErrorResponse>
 ) {
   if (!req.query.location)
     return res.status(400).json({ message: "Bad request" });
@@ -13,5 +13,5 @@ export function dailyForecastHandler(
 
   if (!location) return res.status(404);
 
-  return res.status(200).json(location.dailyWeather);
+  return res.status(200).json(location.hourlyWeather);
 }

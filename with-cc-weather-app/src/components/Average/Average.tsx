@@ -1,7 +1,7 @@
 import { FaSpinner, FaSun } from "react-icons/fa";
 import { useQuery } from "react-query";
 
-import { getAverage } from "@/components/Average/api/getWeather";
+import { getAverage } from "@/components/Average/api/getAverage";
 import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
 export function Average() {

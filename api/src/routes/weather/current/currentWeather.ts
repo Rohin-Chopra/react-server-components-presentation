@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { locationsWeather } from "../../data";
-import { ErrorResponse, Weather } from "../../types/types";
+import { locationsWeather } from "../../../data";
+import { ErrorResponse, Weather } from "../../../types/types";
 
-export function weatherHandler(
+export function currentWeatherHandler(
   req: Request<any, any, any, { location?: string }>,
   res: Response<Weather | ErrorResponse>
 ) {

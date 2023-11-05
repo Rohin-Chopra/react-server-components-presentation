@@ -2,13 +2,13 @@ import cors from "cors";
 import express from "express";
 import { averageHandler } from "./routes/average";
 import { feelsLikeHandler } from "./routes/feelsLike";
-import { dailyForecastHandler } from "./routes/forecast/daily";
-import { hourlyForecastHandler } from "./routes/forecast/hourly";
 import { humidityHandler } from "./routes/humidity";
 import { precipitationHandler } from "./routes/precipitation/precipitation";
 import { uVIndexHandler } from "./routes/uVIndex";
 import { visibilityHandler } from "./routes/visibility";
-import { weatherHandler } from "./routes/weather";
+import { currentWeatherHandler } from "./routes/weather/current";
+import { dailyWeatherHandler } from "./routes/weather/daily";
+import { hourlyWeatherHandler } from "./routes/weather/hourly";
 import { delay } from "./utils/delay";
 
 const app = express();
@@ -27,13 +27,13 @@ app.get("/", (req, res, next) => {
   });
 });
 
-app.get("/weather", weatherHandler);
+app.get("/weather/current", currentWeatherHandler);
+
+app.get("/weather/hourly", hourlyWeatherHandler);
+
+app.get("/weather/daily", dailyWeatherHandler);
 
 app.get("/average", averageHandler);
-
-app.get("/forecast/hourly", hourlyForecastHandler);
-
-app.get("/forecast/daily", dailyForecastHandler);
 
 app.get("/feels-like", feelsLikeHandler);
 

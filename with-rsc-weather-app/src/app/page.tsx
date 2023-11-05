@@ -1,15 +1,15 @@
 import { Average } from "@/components/Average";
-import { DailyForecast } from "@/components/DailyForecast";
+import { DailyWeather } from "@/components/DailyWeather";
 import { FeelsLike } from "@/components/FeelsLike";
-import { HourlyForecast } from "@/components/HourlyForecast";
+import { HourlyWeather } from "@/components/HourlyWeather";
 import { Humidity } from "@/components/Humidity";
 import { Precipitation } from "@/components/Precipitation";
 import { UVIndex } from "@/components/UVIndex";
 import { Visibility } from "@/components/Visibility";
-import { getWeather } from "./lib/getWeather";
+import { getCurrentWeather } from "./lib/getCurrentWeather";
 
 export default async function Home() {
-  const weather = await getWeather();
+  const weather = await getCurrentWeather();
 
   return (
     <div
@@ -28,9 +28,9 @@ export default async function Home() {
               L:{weather?.lowestTemperature} H:{weather?.highestTemperature}
             </p>
           </div>
-          <HourlyForecast />
+          <HourlyWeather />
           <div className="flex">
-            <DailyForecast />
+            <DailyWeather />
             <div className="grid grid-cols-2 ml-4">
               <UVIndex />
               <FeelsLike />
