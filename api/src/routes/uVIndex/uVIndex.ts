@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { locationsWeather } from "../../data";
-import { Metric } from "../../types/types";
+import { ErrorResponse, Metric } from "../../types/types";
 
 export function uVIndexHandler(
   req: Request<any, any, any, { location?: string }>,
