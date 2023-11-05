@@ -4,10 +4,13 @@ import { useQuery } from "react-query";
 import { getPrecipitation } from "@/components/Precipitation/api/getPrecipitation";
 import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
-export function Precipitation() {
-  const { data: precipitationMetric, isLoading } = useQuery(
-    "average",
-    getPrecipitation
+type Props = {
+  location: string;
+};
+
+export function Precipitation({ location }: Props) {
+  const { data: precipitationMetric, isLoading } = useQuery("average", () =>
+    getPrecipitation(location)
   );
 
   if (isLoading) {

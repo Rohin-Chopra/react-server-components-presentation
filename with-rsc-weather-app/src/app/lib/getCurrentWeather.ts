@@ -1,10 +1,9 @@
+import { API_URL } from "@/constants/constants";
 import { Weather } from "../../types/types";
 
-export async function getCurrentWeather(): Promise<Weather> {
-  const location = "melbourne";
-
+export async function getCurrentWeather(location: string): Promise<Weather> {
   const response = await fetch(
-    `${process.env.API_URL}/weather/current?location=${location}`
+    `${API_URL}/weather/current?location=${location}`
   );
   return await response.json();
 }

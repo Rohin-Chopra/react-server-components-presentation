@@ -1,10 +1,7 @@
+import { API_URL } from "@/constants/constants";
 import { Metric } from "@/types/types";
 
-export async function getAverage(): Promise<Metric> {
-  const location = "melbourne";
-
-  const response = await fetch(
-    `${process.env.API_URL}/average?location=${location}`
-  );
+export async function getAverage(location: string): Promise<Metric> {
+  const response = await fetch(`${API_URL}/average?location=${location}`);
   return await response.json();
 }

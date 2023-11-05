@@ -16,7 +16,7 @@ const app = express();
 app.use(cors());
 
 app.use(async (req, res, next) => {
-  await delay(3000);
+  // await delay(3000);
   await delay(0);
   return next();
 });

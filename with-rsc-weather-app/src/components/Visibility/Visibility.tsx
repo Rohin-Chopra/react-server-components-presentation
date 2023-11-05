@@ -2,8 +2,12 @@ import { FaSun } from "react-icons/fa";
 import { WeatherDetailsBox } from "../WeatherDetailsBox";
 import { getVisibility } from "./lib/getVisibility";
 
-export async function Visibility() {
-  const visibilityMetric = await getVisibility();
+type Props = {
+  location: string;
+};
+
+export async function Visibility({ location }: Props) {
+  const visibilityMetric = await getVisibility(location);
 
   return (
     visibilityMetric && (

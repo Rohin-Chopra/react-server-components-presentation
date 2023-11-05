@@ -4,10 +4,13 @@ import { useQuery } from "react-query";
 import { getFeelsLike } from "@/components/FeelsLike/api/getFeelsLike";
 import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
-export function FeelsLike() {
-  const { data: feelsLikeMetric, isLoading } = useQuery(
-    "feels-like",
-    getFeelsLike
+type Props = {
+  location: string;
+};
+
+export function FeelsLike({ location }: Props) {
+  const { data: feelsLikeMetric, isLoading } = useQuery("feels-like", () =>
+    getFeelsLike(location)
   );
 
   if (isLoading) {

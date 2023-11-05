@@ -2,8 +2,12 @@ import { FaCalendar } from "react-icons/fa";
 import { WeatherIcon } from "../WeatherIcon";
 import { getDailyWeather } from "./lib/getDailyWeather";
 
-export const DailyWeather = async () => {
-  const dailyWeather = await getDailyWeather();
+type Props = {
+  location: string;
+};
+
+export const DailyWeather = async ({ location }: Props) => {
+  const dailyWeather = await getDailyWeather(location);
 
   return (
     dailyWeather && (

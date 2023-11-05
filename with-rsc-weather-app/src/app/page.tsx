@@ -8,8 +8,15 @@ import { UVIndex } from "@/components/UVIndex";
 import { Visibility } from "@/components/Visibility";
 import { getCurrentWeather } from "./lib/getCurrentWeather";
 
+function getRandomLocation(): string {
+  const locations = ["melbourne", "sydney"];
+  return locations[Math.floor(Math.random() * locations.length)];
+}
+
 export default async function Home() {
-  const weather = await getCurrentWeather();
+  const location = getRandomLocation();
+
+  const currentWeather = await getCurrentWeather(location);
 
   return (
     <div
@@ -21,23 +28,26 @@ export default async function Home() {
       <div className="flex w-full h-full justify-center py-8">
         <div>
           <div className="text-center mb-4">
-            <h1 className="text-2xl font-medium">{weather?.location}</h1>
-            <h2 className="text-6xl font-extralight">{weather?.temperature}</h2>
-            <p className="text-sm font-medium">{weather?.condition}</p>
+            <h1 className="text-2xl font-medium">{currentWeather?.location}</h1>
+            <h2 className="text-6xl font-extralight">
+              {currentWeather?.temperature}
+            </h2>
+            <p className="text-sm font-medium">{currentWeather?.condition}</p>
             <p className="text-sm font-medium">
-              L:{weather?.lowestTemperature} H:{weather?.highestTemperature}
+              L:{currentWeather?.lowestTemperature} H:
+              {currentWeather?.highestTemperature}
             </p>
           </div>
-          <HourlyWeather />
+          <HourlyWeather location={location} />
           <div className="flex">
-            <DailyWeather />
+            <DailyWeather location={location} />
             <div className="grid grid-cols-2 ml-4">
-              <UVIndex />
-              <FeelsLike />
-              <Humidity />
-              <Average />
-              <Precipitation />
-              <Visibility />
+              <UVIndex location={location} />
+              <FeelsLike location={location} />
+              <Humidity location={location} />
+              <Average location={location} />
+              <Precipitation location={location} />
+              <Visibility location={location} />
             </div>
           </div>
         </div>

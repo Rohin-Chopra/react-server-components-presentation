@@ -2,8 +2,12 @@ import { FaSun } from "react-icons/fa";
 import { WeatherDetailsBox } from "../WeatherDetailsBox";
 import { getPrecipitation } from "./lib/getPrecipitation";
 
-export async function Precipitation() {
-  const precipitationMetric = await getPrecipitation();
+type Props = {
+  location: string;
+};
+
+export async function Precipitation({ location }: Props) {
+  const precipitationMetric = await getPrecipitation(location);
 
   return (
     precipitationMetric && (

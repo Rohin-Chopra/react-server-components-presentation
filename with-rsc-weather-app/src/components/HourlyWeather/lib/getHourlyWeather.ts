@@ -1,10 +1,11 @@
+import { API_URL } from "@/constants/constants";
 import { HourlyWeather } from "@/types/types";
 
-export async function getHourlyWeather(): Promise<HourlyWeather[]> {
-  const location = "melbourne";
-
+export async function getHourlyWeather(
+  location: string
+): Promise<HourlyWeather[]> {
   const response = await fetch(
-    `${process.env.API_URL}/weather/hourly?location=${location}`
+    `${API_URL}/weather/hourly?location=${location}`
   );
   return await response.json();
 }

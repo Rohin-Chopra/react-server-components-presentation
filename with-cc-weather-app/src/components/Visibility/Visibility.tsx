@@ -4,10 +4,13 @@ import { useQuery } from "react-query";
 import { getVisibility } from "@/components/Visibility/api/getVisibility";
 import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
-export function Visibility() {
-  const { data: visibilityMetric, isLoading } = useQuery(
-    "visibility",
-    getVisibility
+type Props = {
+  location: string;
+};
+
+export function Visibility({ location }: Props) {
+  const { data: visibilityMetric, isLoading } = useQuery("visibility", () =>
+    getVisibility(location)
   );
 
   if (isLoading) {

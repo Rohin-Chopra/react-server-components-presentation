@@ -4,8 +4,14 @@ import { useQuery } from "react-query";
 import { getUVIndex } from "@/components/UVIndex/api/getUVIndex";
 import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
-export const UVIndex = () => {
-  const { data: uVIndexMetric, isLoading } = useQuery("uv-index", getUVIndex);
+type Props = {
+  location: string;
+};
+
+export const UVIndex = ({ location }: Props) => {
+  const { data: uVIndexMetric, isLoading } = useQuery("uv-index", () =>
+    getUVIndex(location)
+  );
 
   if (isLoading) {
     return (

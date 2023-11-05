@@ -4,8 +4,14 @@ import { useQuery } from "react-query";
 import { getAverage } from "@/components/Average/api/getAverage";
 import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
-export function Average() {
-  const { data: averageMetric, isLoading } = useQuery("average", getAverage);
+type Props = {
+  location: string;
+};
+
+export function Average({ location }: Props) {
+  const { data: averageMetric, isLoading } = useQuery("average", () =>
+    getAverage(location)
+  );
 
   if (isLoading) {
     return (

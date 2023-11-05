@@ -4,10 +4,13 @@ import { useQuery } from "react-query";
 import { getHourlyWeather } from "@/components/HourlyWeather/api/getHourlyWeather";
 import { WeatherIcon } from "@/components/WeatherIcon";
 
-export const HourlyWeather = () => {
-  const { data: hourlyWeather, isLoading } = useQuery(
-    "weather/hourly",
-    getHourlyWeather
+type Props = {
+  location: string;
+};
+
+export const HourlyWeather = ({ location }: Props) => {
+  const { data: hourlyWeather, isLoading } = useQuery("weather/hourly", () =>
+    getHourlyWeather(location)
   );
 
   if (isLoading) {

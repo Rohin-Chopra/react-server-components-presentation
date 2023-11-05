@@ -29,7 +29,7 @@ export const sydney: LocationWeather = {
     description: "Perfectly clear view.",
   },
   currentWeather: {
-    location: "Syndey",
+    location: "Sydney",
     temperature: "12°",
     condition: "Partly Cloudy",
     lowestTemperature: "12°",
@@ -39,7 +39,7 @@ export const sydney: LocationWeather = {
     {
       time: "2PM",
       condition: "Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "8°",
       highestTemperature: "20°",
       temperature: "20°",
@@ -47,7 +47,7 @@ export const sydney: LocationWeather = {
     {
       time: "3PM",
       condition: "Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "24°",
       temperature: "20°",
@@ -55,7 +55,7 @@ export const sydney: LocationWeather = {
     {
       time: "4PM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "11°",
       highestTemperature: "26°",
       temperature: "20°",
@@ -63,7 +63,7 @@ export const sydney: LocationWeather = {
     {
       time: "5PM",
       condition: "Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "15°",
       highestTemperature: "28°",
       temperature: "20°",
@@ -71,7 +71,7 @@ export const sydney: LocationWeather = {
     {
       time: "6PM",
       condition: "Cloudy",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "15°",
       highestTemperature: "27°",
       temperature: "20°",
@@ -79,7 +79,7 @@ export const sydney: LocationWeather = {
     {
       time: "7PM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "13°",
       highestTemperature: "25°",
       temperature: "20°",
@@ -87,7 +87,7 @@ export const sydney: LocationWeather = {
     {
       time: "8PM",
       condition: "Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "12°",
       highestTemperature: "30°",
       temperature: "20°",
@@ -95,7 +95,7 @@ export const sydney: LocationWeather = {
     {
       time: "11PM",
       condition: "Cloudy",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "12°",
       highestTemperature: "29°",
       temperature: "20°",
@@ -103,7 +103,7 @@ export const sydney: LocationWeather = {
     {
       time: "12PM",
       condition: "Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "9°",
       highestTemperature: "17°",
       temperature: "20°",
@@ -111,7 +111,7 @@ export const sydney: LocationWeather = {
     {
       time: "1AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -119,7 +119,7 @@ export const sydney: LocationWeather = {
     {
       time: "2AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -127,7 +127,7 @@ export const sydney: LocationWeather = {
     {
       time: "3AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -135,7 +135,7 @@ export const sydney: LocationWeather = {
     {
       time: "4AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -143,7 +143,7 @@ export const sydney: LocationWeather = {
     {
       time: "5AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -151,7 +151,7 @@ export const sydney: LocationWeather = {
     {
       time: "6AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -159,7 +159,7 @@ export const sydney: LocationWeather = {
     {
       time: "7AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -167,7 +167,7 @@ export const sydney: LocationWeather = {
     {
       time: "8AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -175,7 +175,7 @@ export const sydney: LocationWeather = {
     {
       time: "9AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -183,7 +183,7 @@ export const sydney: LocationWeather = {
     {
       time: "10AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -191,7 +191,7 @@ export const sydney: LocationWeather = {
     {
       time: "11AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -199,7 +199,7 @@ export const sydney: LocationWeather = {
     {
       time: "12AM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -207,7 +207,7 @@ export const sydney: LocationWeather = {
     {
       time: "1PM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -215,7 +215,7 @@ export const sydney: LocationWeather = {
     {
       time: "2PM",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",
@@ -225,7 +225,7 @@ export const sydney: LocationWeather = {
     {
       day: "Saturday",
       condition: "Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "8°",
       highestTemperature: "20°",
       temperature: "20°",
@@ -233,7 +233,7 @@ export const sydney: LocationWeather = {
     {
       day: "Sunday",
       condition: "Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "24°",
       temperature: "20°",
@@ -241,7 +241,7 @@ export const sydney: LocationWeather = {
     {
       day: "Monday",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "11°",
       highestTemperature: "26°",
       temperature: "20°",
@@ -249,7 +249,7 @@ export const sydney: LocationWeather = {
     {
       day: "Tuesday",
       condition: "Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "15°",
       highestTemperature: "28°",
       temperature: "20°",
@@ -257,7 +257,7 @@ export const sydney: LocationWeather = {
     {
       day: "Wednesday",
       condition: "Cloudy",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "15°",
       highestTemperature: "27°",
       temperature: "20°",
@@ -265,7 +265,7 @@ export const sydney: LocationWeather = {
     {
       day: "Thursday",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "13°",
       highestTemperature: "25°",
       temperature: "20°",
@@ -273,7 +273,7 @@ export const sydney: LocationWeather = {
     {
       day: "Friday",
       condition: "Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "12°",
       highestTemperature: "30°",
       temperature: "20°",
@@ -281,7 +281,7 @@ export const sydney: LocationWeather = {
     {
       day: "Saturday",
       condition: "Cloudy",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "12°",
       highestTemperature: "29°",
       temperature: "20°",
@@ -289,7 +289,7 @@ export const sydney: LocationWeather = {
     {
       day: "Sunday",
       condition: "Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "9°",
       highestTemperature: "17°",
       temperature: "20°",
@@ -297,7 +297,7 @@ export const sydney: LocationWeather = {
     {
       day: "Monday",
       condition: "Cloudy and Sunny",
-      location: "Syndey",
+      location: "Sydney",
       lowestTemperature: "7°",
       highestTemperature: "19°",
       temperature: "20°",

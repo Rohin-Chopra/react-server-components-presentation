@@ -10,10 +10,17 @@ import { getCurrentWeather } from "@/pages/WeatherPage/api/getCurrentWeather";
 import { FaSpinner } from "react-icons/fa";
 import { useQuery } from "react-query";
 
+function getRandomLocation(): string {
+  const locations = ["melbourne", "sydney"];
+
+  return locations[Math.floor(Math.random() * locations.length)];
+}
+
 export const WeatherPage = () => {
-  const { data: weather, isLoading } = useQuery(
-    "weather/current",
-    getCurrentWeather
+  const location = getRandomLocation();
+
+  const { data: weather, isLoading } = useQuery("weather/current", () =>
+    getCurrentWeather(location)
   );
 
   if (isLoading) {
@@ -41,16 +48,16 @@ export const WeatherPage = () => {
               L:{weather?.lowestTemperature} H:{weather?.highestTemperature}
             </p>
           </div>
-          <HourlyWeather />
+          <HourlyWeather location={location} />
           <div className="flex">
             <DailyWeather />
             <div className="grid grid-cols-2 ml-4">
-              <UVIndex />
-              <FeelsLike />
-              <Humidity />
-              <Average />
-              <Precipitation />
-              <Visibility />
+              <UVIndex location={location} />
+              <FeelsLike location={location} />
+              <Humidity location={location} />
+              <Average location={location} />
+              <Precipitation location={location} />
+              <Visibility location={location} />
             </div>
           </div>
         </div>

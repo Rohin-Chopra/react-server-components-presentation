@@ -4,8 +4,14 @@ import { useQuery } from "react-query";
 import { getHumidity } from "@/components/Humidity/api/getHumidity";
 import { WeatherDetailsBox } from "@/components/WeatherDetailsBox";
 
-export function Humidity() {
-  const { data: humidityMetric, isLoading } = useQuery("humidity", getHumidity);
+type Props = {
+  location: string;
+};
+
+export function Humidity({ location }: Props) {
+  const { data: humidityMetric, isLoading } = useQuery("humidity", () =>
+    getHumidity(location)
+  );
 
   if (isLoading) {
     return (

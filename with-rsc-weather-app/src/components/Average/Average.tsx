@@ -3,8 +3,12 @@ import { FaSun } from "react-icons/fa";
 import { WeatherDetailsBox } from "../WeatherDetailsBox";
 import { getAverage } from "./lib/getWeather";
 
-export async function Average() {
-  const averageMetric = await getAverage();
+type Props = {
+  location: string;
+};
+
+export async function Average({ location }: Props) {
+  const averageMetric = await getAverage(location);
 
   return (
     averageMetric && (

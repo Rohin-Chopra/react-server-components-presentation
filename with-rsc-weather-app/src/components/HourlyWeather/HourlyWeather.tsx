@@ -1,8 +1,12 @@
 import { WeatherIcon } from "../WeatherIcon";
 import { getHourlyWeather } from "./lib/getHourlyWeather";
 
-export const HourlyWeather = async () => {
-  const hourlyWeather = await getHourlyWeather();
+type Props = {
+  location: string;
+};
+
+export const HourlyWeather = async ({ location }: Props) => {
+  const hourlyWeather = await getHourlyWeather(location);
 
   return (
     hourlyWeather && (
