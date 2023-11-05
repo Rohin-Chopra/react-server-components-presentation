@@ -3,9 +3,12 @@ import { DailyWeather } from "@/components/DailyWeather";
 import { FeelsLike } from "@/components/FeelsLike";
 import { HourlyWeather } from "@/components/HourlyWeather";
 import { Humidity } from "@/components/Humidity";
+import { LoadingWetherDetailsBox } from "@/components/LoadingWetherDetailsBox";
 import { Precipitation } from "@/components/Precipitation";
 import { UVIndex } from "@/components/UVIndex";
 import { Visibility } from "@/components/Visibility";
+import { Suspense } from "react";
+import { FaSpinner } from "react-icons/fa";
 import { getCurrentWeather } from "./lib/getCurrentWeather";
 
 function getRandomLocation(): string {
@@ -13,7 +16,7 @@ function getRandomLocation(): string {
   return locations[Math.floor(Math.random() * locations.length)];
 }
 
-export default async function Home() {
+async function Home() {
   const location = getRandomLocation();
 
   const currentWeather = await getCurrentWeather(location);
@@ -38,21 +41,51 @@ export default async function Home() {
               {currentWeather?.highestTemperature}
             </p>
           </div>
-          <HourlyWeather location={location} />
+          <Suspense fallback={<LoadingWetherDetailsBox />}>
+            <HourlyWeather location={location} />
+          </Suspense>
           <div className="flex">
-            <DailyWeather location={location} />
+            <Suspense fallback={<LoadingWetherDetailsBox />}>
+              <DailyWeather location={location} />
+            </Suspense>
             <div className="grid grid-cols-2 ml-4">
-              <UVIndex location={location} />
-              <FeelsLike location={location} />
-              <Humidity location={location} />
-              <Average location={location} />
-              <Precipitation location={location} />
-              <Visibility location={location} />
+              <Suspense fallback={<LoadingWetherDetailsBox />}>
+                <UVIndex location={location} />
+              </Suspense>
+              <Suspense fallback={<LoadingWetherDetailsBox />}>
+                <FeelsLike location={location} />
+              </Suspense>
+              <Suspense fallback={<LoadingWetherDetailsBox />}>
+                <Humidity location={location} />
+              </Suspense>
+              <Suspense fallback={<LoadingWetherDetailsBox />}>
+                <Average location={location} />
+              </Suspense>
+              <Suspense fallback={<LoadingWetherDetailsBox />}>
+                <Precipitation location={location} />
+              </Suspense>
+              <Suspense fallback={<LoadingWetherDetailsBox />}>
+                <Visibility location={location} />
+              </Suspense>
             </div>
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+export default function HomeWithSuspense() {
+  return (
+    <Suspense
+      fallback={
+        <div className="h-screen w-screen flex items-center justify-center">
+          <FaSpinner className="animate-spin text-4xl" />
+        </div>
+      }
+    >
+      <Home />
+    </Suspense>
   );
 }
 
