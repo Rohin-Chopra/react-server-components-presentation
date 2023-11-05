@@ -1,9 +1,17 @@
 import { Request, Response } from "express";
-import { Metric } from "../../types/types";
+import { locationsWeather } from "../../data";
+import { ErrorResponse, Metric } from "../../types/types";
 
-export function visibilityHandler(req: Request, res: Response<Metric>) {
-  return res.status(200).json({
-    metric: "31 km",
-    description: "Perfectly clear view.",
-  });
+export function visibilityHandler(
+  req: Request<any, any, any, { location?: string }>,
+  res: Response<Metric | ErrorResponse>
+) {
+  if (!req.query.location)
+    return res.status(400).json({ message: "Bad request" });
+
+  const location = locationsWeather[req.query.location];
+
+  if (!location) return res.status(404);
+
+  return res.status(200).json(location.visibility);
 }

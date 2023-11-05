@@ -23,9 +23,7 @@ export default async function Home() {
           <div className="text-center mb-4">
             <h1 className="text-2xl font-medium">{weather?.location}</h1>
             <h2 className="text-6xl font-extralight">{weather?.temperature}</h2>
-            <p className="text-sm font-medium">
-              {weather?.temperatureDescription}
-            </p>
+            <p className="text-sm font-medium">{weather?.condition}</p>
             <p className="text-sm font-medium">
               L:{weather?.lowestTemperature} H:{weather?.highestTemperature}
             </p>

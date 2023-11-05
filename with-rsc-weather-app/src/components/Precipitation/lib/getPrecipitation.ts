@@ -1,8 +1,10 @@
 import { Metric } from "@/types/types";
 
 export async function getPrecipitation(): Promise<Metric> {
+  const location = "melbourne";
+
   const response = await fetch(
-    "https://cnwr5x5ob4.execute-api.ap-southeast-2.amazonaws.com/precipitation"
+    `${process.env.API_URL}/precipitation?location=${location}`
   );
   return await response.json();
 }

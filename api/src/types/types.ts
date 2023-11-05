@@ -19,7 +19,6 @@ export type Weather = {
   location: string;
   condition: WeatherCondition;
   temperature: string;
-  temperatureDescription: string;
   lowestTemperature: string;
   highestTemperature: string;
 };
@@ -30,4 +29,20 @@ export type DailyWeather = Weather & {
 
 export type HourlyWeather = Weather & {
   time: string;
+};
+
+export type LocationWeather = {
+  average: Metric;
+  feelsLike: Metric;
+  humidity: Metric;
+  precipitation: Metric;
+  uVIndex: Metric;
+  visibility: Metric;
+  currentWeather: Weather;
+  hourlyWeather: HourlyWeather[];
+  dailyWeather: DailyWeather[];
+};
+
+export type ErrorResponse = {
+  message: string;
 };

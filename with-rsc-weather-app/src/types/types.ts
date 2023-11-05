@@ -19,7 +19,6 @@ export type Weather = {
   location: string;
   condition: WeatherCondition;
   temperature: string;
-  temperatureDescription: string;
   lowestTemperature: string;
   highestTemperature: string;
 };

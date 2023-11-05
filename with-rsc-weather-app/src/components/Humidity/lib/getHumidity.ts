@@ -1,8 +1,10 @@
 import { Metric } from "@/types/types";
 
 export async function getHumidity(): Promise<Metric> {
+  const location = "melbourne";
+
   const response = await fetch(
-    "https://cnwr5x5ob4.execute-api.ap-southeast-2.amazonaws.com/humidity"
+    `${process.env.API_URL}/humidity?location=${location}`
   );
   return await response.json();
 }

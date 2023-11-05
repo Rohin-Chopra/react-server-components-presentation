@@ -1,100 +1,17 @@
 import { Request, Response } from "express";
-import { DailyWeather } from "../../../types/types";
+import { locationsWeather } from "../../../data";
+import { DailyWeather, ErrorResponse } from "../../../types/types";
 
 export function dailyForecastHandler(
-  req: Request,
-  res: Response<DailyWeather[]>
+  req: Request<any, any, any, { location?: string }>,
+  res: Response<DailyWeather[] | ErrorResponse>
 ) {
-  return res.status(200).json([
-    {
-      day: "Saturday",
-      condition: "Sunny",
-      location: "Melbourne",
-      lowestTemperature: "8°",
-      highestTemperature: "20°",
-      temperature: "20°",
-      temperatureDescription: "partly cloudy",
-    },
-    {
-      day: "Sunday",
-      condition: "Sunny",
-      location: "Melbourne",
-      lowestTemperature: "7°",
-      highestTemperature: "24°",
-      temperature: "20°",
-      temperatureDescription: "partly cloudy",
-    },
-    {
-      day: "Monday",
-      condition: "Cloudy and Sunny",
-      location: "Melbourne",
-      lowestTemperature: "11°",
-      highestTemperature: "26°",
-      temperature: "20°",
-      temperatureDescription: "partly cloudy",
-    },
-    {
-      day: "Tuesday",
-      condition: "Sunny",
-      location: "Melbourne",
-      lowestTemperature: "15°",
-      highestTemperature: "28°",
-      temperature: "20°",
-      temperatureDescription: "partly cloudy",
-    },
-    {
-      day: "Wednesday",
-      condition: "Cloudy",
-      location: "Melbourne",
-      lowestTemperature: "15°",
-      highestTemperature: "27°",
-      temperature: "20°",
-      temperatureDescription: "partly cloudy",
-    },
-    {
-      day: "Thursday",
-      condition: "Cloudy and Sunny",
-      location: "Melbourne",
-      lowestTemperature: "13°",
-      highestTemperature: "25°",
-      temperature: "20°",
-      temperatureDescription: "partly cloudy",
-    },
-    {
-      day: "Friday",
-      condition: "Sunny",
-      location: "Melbourne",
-      lowestTemperature: "12°",
-      highestTemperature: "30°",
-      temperature: "20°",
-      temperatureDescription: "partly cloudy",
-    },
-    {
-      day: "Saturday",
-      condition: "Cloudy",
-      location: "Melbourne",
-      lowestTemperature: "12°",
-      highestTemperature: "29°",
-      temperature: "20°",
-      temperatureDescription: "partly cloudy",
-    },
-    {
-      day: "Sunday",
-      condition: "Sunny",
-      location: "Melbourne",
-      lowestTemperature: "9°",
-      highestTemperature: "17°",
-      temperature: "20°",
-      temperatureDescription: "partly cloudy",
-    },
-    {
-      day: "Monday",
-      condition: "Cloudy and Sunny",
-      location: "Melbourne",
-      lowestTemperature: "7°",
-      highestTemperature: "19°",
-      temperature: "20°",
-      temperatureDescription: "partly cloudy",
-    },
-  ]);
+  if (!req.query.location)
+    return res.status(400).json({ message: "Bad request" });
+
+  const location = locationsWeather[req.query.location];
+
+  if (!location) return res.status(404);
+
+  return res.status(200).json(location.dailyWeather);
 }

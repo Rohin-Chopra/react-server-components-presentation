@@ -1,8 +1,10 @@
 import { Metric } from "@/types/types";
 
 export async function getVisibility(): Promise<Metric> {
+  const location = "melbourne";
+
   const response = await fetch(
-    "https://cnwr5x5ob4.execute-api.ap-southeast-2.amazonaws.com/visibility"
+    `${process.env.API_URL}/visibility?location=${location}`
   );
   return await response.json();
 }

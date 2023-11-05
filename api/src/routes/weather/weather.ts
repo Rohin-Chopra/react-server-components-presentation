@@ -1,22 +1,17 @@
 import { Request, Response } from "express";
-
-type GetWeatherResponseBody = {
-  location: string;
-  temperature: string;
-  temperatureDescription: string;
-  lowestTemperature: string;
-  highestTemperature: string;
-};
+import { locationsWeather } from "../../data";
+import { ErrorResponse, Weather } from "../../types/types";
 
 export function weatherHandler(
-  req: Request,
-  res: Response<GetWeatherResponseBody>
+  req: Request<any, any, any, { location?: string }>,
+  res: Response<Weather | ErrorResponse>
 ) {
-  return res.status(200).json({
-    location: "Melbourne",
-    temperature: "12°",
-    temperatureDescription: "Partly Cloudy",
-    lowestTemperature: "12°",
-    highestTemperature: "16°",
-  });
+  if (!req.query.location)
+    return res.status(400).json({ message: "Bad request" });
+
+  const location = locationsWeather[req.query.location];
+
+  if (!location) return res.status(404);
+
+  return res.status(200).json(location.currentWeather);
 }

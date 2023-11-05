@@ -1,10 +1,17 @@
 import { Request, Response } from "express";
-import { Metric } from "../../types/types";
+import { locationsWeather } from "../../data";
+import { ErrorResponse, Metric } from "../../types/types";
 
-export function precipitationHandler(req: Request, res: Response<Metric>) {
-  return res.status(200).json({
-    metric: "0mm",
-    metricText: "in last 24h",
-    description: "Next expected is less than 1mm rain on Thu",
-  });
+export function precipitationHandler(
+  req: Request<any, any, any, { location?: string }>,
+  res: Response<Metric | ErrorResponse>
+) {
+  if (!req.query.location)
+    return res.status(400).json({ message: "Bad request" });
+
+  const location = locationsWeather[req.query.location];
+
+  if (!location) return res.status(404);
+
+  return res.status(200).json(location.precipitation);
 }
